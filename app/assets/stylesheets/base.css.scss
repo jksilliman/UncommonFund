@@ -1,0 +1,55 @@
+@mixin border-radius($br){
+  border-radius: $br;
+  -webkit-border-radius: $br;
+  -khtml-border-radius: $br;
+  -moz-border-radius: $br;
+}
+
+html {
+  background-color: #660000;
+}
+body {
+  //background-color: #660000;
+  //color: white;
+  width: 960px;
+  margin: auto;
+}
+
+.page-header {
+  margin-top:30px;
+}
+
+.user-panel{
+  float:right; margin:30px;
+  a {
+    display:block;
+    background: #eed;
+    text-shadow: 0 1px #fff;
+    padding:8px 16px;
+    margin-bottom:2px;
+    &:hover,&:active{background:#ddc;}
+  }
+}
+
+h1,h2,h3,h4,h5,h6,legend,label {
+  //color: white !important;
+}
+.container-fluid {
+  margin-bottom:30px; padding-bottom:30px;
+  .sidebar{
+    .committees { 
+      background-color: white;
+      li{
+        a{
+          color: black;
+          display:block;
+          background: #ddc;
+          text-shadow: 0 1px #fff;
+          padding:6px 10px;
+          margin-bottom:2px;
+          &:hover,&:active{background:#eed; text-decoration:none;}
+        }
+      }
+    }
+  }
+}

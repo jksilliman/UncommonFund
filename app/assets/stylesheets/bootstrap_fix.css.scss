@@ -1,0 +1,7 @@
+.help-inline, .help-block {
+      color: #808080;
+}
+.clearfix:before, .clearfix:after {
+  content: "";
+  display: inline !important;
+}

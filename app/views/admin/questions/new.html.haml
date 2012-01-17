@@ -1,0 +1,9 @@
+- title "New Question"
+
+= simple_form_for([:admin, @question]) do |f|
+  = f.input :text, :input_html => { :rows => 2 }
+  = f.association :committee, :hint => "Leave blank to use for all committees"
+  = f.input :for_nominator, :as => 'hidden'
+  = f.input :for_applicant, :as => 'hidden'
+  .actions
+    = f.submit :class => "btn primary"

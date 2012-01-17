@@ -1,0 +1,18 @@
+- title "Manage Committees" 
+= link_to "Create Committee", new_admin_committee_path, :class => "btn primary"
+%table.committees.zebra-striped
+  %thead
+    %tr
+      %th Section
+      %th Name
+      %th # Nominees
+      %th Action
+  %tbody
+    - @committees.each do |committee|
+      %tr
+        %td= committee.section.try(:name)
+        %td= link_to committee.name, admin_committee_path(committee)
+        %td= committee.nominees_and_applicants.count 
+        %td(width="100px")
+          = link_to "Edit", edit_admin_committee_path(committee)
+          = link_to "Delete", admin_committee_path(committee), :method => "delete", :confirm => "Are you ABSOLUTELY sure you want to delete this committee? All data for it (nominations, etc.) will be lost."

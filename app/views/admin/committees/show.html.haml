@@ -1,0 +1,19 @@
+- title @committee.name
+
+%h2 Nominations
+%table
+  %thead
+    %tr
+      %th Nominee
+      %th Nominated By
+      %th Application Submitted?
+
+  - if @committee.nominees_and_applicants.empty?
+    %tr
+      %td(colspan="3") The are no nominations for this committee.
+  - else
+    - @committee.nominees_and_applicants.each do |nominee|
+      %tr
+        %td= link_to nominee.name, admin_nominations_path(:nominee_id => nominee.id, :committee_id => @committee.id)
+        %td= @committee.nominators_for(nominee)
+        %td= (@committee.application_for(nominee)) ? "YES" : "NO" 

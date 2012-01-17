@@ -1,0 +1,17 @@
+- title "Apply for #{@committee.name}"
+
+%p
+  = simple_form_for(@application) do |f|
+    = f.input :committee_id, :as => "hidden"
+    %fieldset
+      %legend Your Info
+      = f.simple_fields_for :applicant, (current_user) do |u|
+        = u.input :first_name, :required => true
+        = u.input :last_name, :required => true
+        = u.input :phone_number, :as => :string
+        
+    %fieldset
+      %legend The Tough Questions
+      = render 'shared/questions', :f => f, :questions => @application.questions
+    .actions
+      = f.submit 'Submit Application', :class => "btn primary"

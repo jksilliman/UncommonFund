@@ -1,0 +1,48 @@
+!!! 5
+%html
+  %head
+    %title= "#{title} | UChicago Committees" 
+    = stylesheet_link_tag "application"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  %body
+    .page-header
+      .user-panel
+        - if current_user
+          = "Welcome, #{current_user.username}"
+          - if current_user.is_admin
+            = link_to "Admin Panel", admin_path
+            = " | "
+          = link_to "Logout", destroy_user_session_path, :method => "delete"
+        - else
+          = link_to "Login", new_user_session_path
+
+    .container-fluid
+      .header
+        = link_to "http://sg.uchicago.edu/" do 
+          = image_tag "sg.jpg", :class => 'logo'
+        = link_to root_path do
+          %h1 UChicago Committees
+        %p 
+          Looking to join one of the University's many Student Life Committees?
+          %br 
+          You've come to the right place!  
+      .sidebar
+        - if content_for?(:sidebar)
+          = yield :sidebar
+        - else
+          %ul.committees.unstyled
+            - Section.all.each do |section|
+              %li= link_to section.name, committees_path(section_id: section.id)
+            - if Committee.count(:conditions => {:section_id => nil }) > 0
+              %li= link_to "Other", committees_path
+      
+      .content
+        %h1= title
+        
+        .flashes
+          - flash.each do |type, text|
+            %div{"class" => "#{type} alert-message"}= text
+        .row
+          .span10.columns
+            = yield

@@ -1,0 +1,5 @@
+- questions.each do |question|
+  = f.simple_fields_for "questions_attributes[#{question.id}]", question do |q|
+    = q.input :answer, :as => 'text', :label => question.text, :input_html => { :rows => 4 }, :required => true
+
+

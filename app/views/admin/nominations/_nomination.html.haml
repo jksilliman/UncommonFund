@@ -1,0 +1,8 @@
+%h4 Nominator Info
+.block
+  = render 'user', :user => nomination.nominator
+%h4 Questions/Answers
+.block
+  - nomination.answers.each do |data|
+    %h4= data["question"]
+    %p=  data["answer"]

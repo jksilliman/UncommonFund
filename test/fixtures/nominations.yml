@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  committee_id: 1
+  nominator_id: 1
+  nominee_id: 1
+
+two:
+  committee_id: 1
+  nominator_id: 1
+  nominee_id: 1

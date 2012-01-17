@@ -1,0 +1,12 @@
+-title "Sign in"
+
+= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| 
+  = f.input :username
+  = f.input :password
+
+  /- if devise_mapping.rememberable? 
+  /  %div
+  /    = f.input :remember_me, :as => :boolean
+
+  = f.submit "Sign in", :class => "btn primary"
+

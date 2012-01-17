@@ -1,0 +1,21 @@
+%h1 Manage Admins
+
+= simple_form_for([:admin, @user]) do |f|
+  %fieldset
+    %legend Create Admin User
+    = f.input :username
+    = f.submit "Create", :class => "btn primary" 
+
+%table#users
+  %thead
+    %tr
+      %th CNetID
+      %th Action
+  %tbody
+  - @users.each do |user|
+    %tr.user{"data-user" => user.id}
+      %td= user.username
+      %td 
+        - if can? :destroy, user
+          = link_to "Remove", admin_user_path(user), :remote => true, :method => :delete, :confirm => "Are you sure you want to remove this user's administrative powers?"
+

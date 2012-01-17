@@ -1,0 +1,14 @@
+- title "Manage Site Content" 
+%table.committees.zebra-striped
+  %thead
+    %tr
+      %th Name
+      %th Description
+      %th Action
+  %tbody
+    - @items.each do |item|
+      %tr
+        %td= item.name
+        %td= item.description
+        %td
+          = link_to "Edit", edit_admin_content_path(item)

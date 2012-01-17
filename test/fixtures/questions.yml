@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  type: 
+  text: MyText
+  for_nominator: false
+  for_applicant: false
+
+two:
+  type: 
+  text: MyText
+  for_nominator: false
+  for_applicant: false

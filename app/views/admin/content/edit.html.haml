@@ -1,0 +1,11 @@
+%h1= "Editing #{@item.name}"
+%h3= @item.description
+
+The text is written in a markup language known as Markdown. See 
+%a(href="http://daringfireball.net/projects/markdown/syntax" target="_blank")
+  the documentation
+for details.
+
+= simple_form_for(@item, :url => admin_content_path, :method => :put) do |f|
+  = f.input :text
+  = f.submit

@@ -1,0 +1,6 @@
+- title @section.name
+= markdown(@section.info)
+
+- @committees.each do |committee|
+  = render "committee", :committee => committee
+
