@@ -19,20 +19,27 @@
 
     .container-fluid
       .header
-        = link_to "http://sg.uchicago.edu/" do 
+        = link_to root_path do 
           = image_tag "uncommonfund.png", :class => 'logo'
         = link_to root_path do
-          %h1 UChicago Uncommon Fund  
+          %h1 UChicago Uncommon Fund 
+          %p
+            %ul.nav
+              %li= link_to "Home", page_path("home")
+              %li= link_to "About", page_path("about")
+              %li= link_to "Previously Funded", page_path("history")
+              %li= link_to "2012 Finalists", projects_path 
       .sidebar
         - if content_for?(:sidebar)
           = yield :sidebar
         - else
           %ul.committees.unstyled      
       .content
-        %h1= title
         .flashes
           - flash.each do |type, text|
             %div{"class" => "#{type} alert-message"}= text
+        %h1= title
+
         .row
           .span10.columns
             = yield

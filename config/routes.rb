@@ -1,11 +1,22 @@
 UncommonFund::Application.routes.draw do
   devise_for :users
 
+
+  resources :projects, :only => [:index, :show] do
+    member do
+      post :like
+      post :unlike
+    end
+  end
+
   namespace :admin do
+    resources :projects, :only => [:index, :new, :create, :edit, :update, :destroy]
+    resources :categories, :only => [:index, :new, :create, :edit, :update, :destroy]
     resources :users, :only => [:index, :new, :create, :destroy]
     root :to => 'users#index', :as => ""
   end
 
-  root :to => 'main#index'
+  root :to => 'high_voltage/pages#show', :id => 'home'
+
 
 end

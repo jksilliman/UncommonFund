@@ -14,6 +14,7 @@ gem 'simple_form', :git => 'git://github.com/plataformatec/simple_form.git', :br
 gem 'responders'
 gem "therubyracer", :require => 'v8'
 gem 'bluecloth'
+gem 'high_voltage'
 
 
 # Gems used only for assets and not required

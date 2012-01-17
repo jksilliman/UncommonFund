@@ -13,6 +13,16 @@
   margin-bottom: 0px;
 }
 
-.container-fluid .sidebar {
-  clear: both;
+.container-fluid {
+  .sidebar, .content {
+    clear: both;
+  }
+}
+
+ul.nav {
+  list-style: none outside none;
+  li {
+    float: left;
+    padding: 10px;
+  } 
 }

@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_many :votes 
+  
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable, :omniauthable, :registerable, :validatable, :recoverable
 
@@ -6,7 +8,6 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :username, :password 
   attr_accessible :username, :is_admin, :as => :admin
-  attr_accessible :first_name, :last_name, :phone_number, :as => :applicant
 
   validate :is_in_ldap
   def is_in_ldap
