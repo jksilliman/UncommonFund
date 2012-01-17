@@ -1,9 +1,5 @@
 - content_for :sidebar do
   %h2 Admin Panel
   %ul.unstyled
-    %li= link_to "Manage Site Content", admin_content_index_path
     %li= link_to "Manage Admins", admin_users_path
-    %li= link_to "Manage Sections", admin_sections_path
-    %li= link_to "Manage Committees", admin_committees_path
-    %li= link_to "Manage Questions", admin_questions_path
 = render :template => 'layouts/application'

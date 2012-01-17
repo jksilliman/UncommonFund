@@ -8,7 +8,7 @@ set :bundle_roles, :app
 require 'bundler/capistrano'
 default_run_options[:pty] = true
 
-set :application, "committees"
+set :application, "uncommonfund"
 set :repository,  "git://github.com/jksilliman/UncommonFund.git"
 set :scm, :git
 set :deploy_via, :remote_cache

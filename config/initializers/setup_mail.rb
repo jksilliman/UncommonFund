@@ -1,5 +1,5 @@
 if Rails.env.production?
-  email_config = YAML.load_file('/var/www/committees/email_config.yaml')
+  email_config = YAML.load_file('/var/www/uncommonfund/email_config.yaml')
   email = email_config['email']
   email_password = email_config['email_password']
 end

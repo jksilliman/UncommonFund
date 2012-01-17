@@ -1,4 +1,4 @@
-Committees::Application.configure do
+UncommonFund::Application.configure do
 
   config.action_mailer.default_url_options = { :host => "sg.uchicago.edu" }
 

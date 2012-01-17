@@ -1,4 +1,4 @@
-Committees::Application.configure do
+UncommonFund::Application.configure do
   config.cache_classes = false
   config.whiny_nils = true
   # Show full error reports and disable caching
