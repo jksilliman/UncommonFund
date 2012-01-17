@@ -1,7 +1,7 @@
 !!! 5
 %html
   %head
-    %title= "#{title} | UChicago Committees" 
+    %title= "#{title} | UChicago Uncommon Fund" 
     = stylesheet_link_tag "application"
     = javascript_include_tag "application"
     = csrf_meta_tags
@@ -20,26 +20,16 @@
     .container-fluid
       .header
         = link_to "http://sg.uchicago.edu/" do 
-          = image_tag "sg.jpg", :class => 'logo'
+          = image_tag "uncommonfund.png", :class => 'logo'
         = link_to root_path do
-          %h1 UChicago Committees
-        %p 
-          Looking to join one of the University's many Student Life Committees?
-          %br 
-          You've come to the right place!  
+          %h1 UChicago Uncommon Fund  
       .sidebar
         - if content_for?(:sidebar)
           = yield :sidebar
         - else
-          %ul.committees.unstyled
-            - Section.all.each do |section|
-              %li= link_to section.name, committees_path(section_id: section.id)
-            - if Committee.count(:conditions => {:section_id => nil }) > 0
-              %li= link_to "Other", committees_path
-      
+          %ul.committees.unstyled      
       .content
         %h1= title
-        
         .flashes
           - flash.each do |type, text|
             %div{"class" => "#{type} alert-message"}= text

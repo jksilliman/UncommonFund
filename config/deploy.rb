@@ -9,10 +9,10 @@ require 'bundler/capistrano'
 default_run_options[:pty] = true
 
 set :application, "committees"
-set :repository,  "git://github.com/jksilliman/Committees.git"
+set :repository,  "git://github.com/jksilliman/UncommonFund.git"
 set :scm, :git
 set :deploy_via, :remote_cache
-set :deploy_to, "/var/www/committees"
+set :deploy_to, "/var/www/uncommonfund"
 
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 server "sg.uchicago.edu", :app, :web, :db, :primary => true
