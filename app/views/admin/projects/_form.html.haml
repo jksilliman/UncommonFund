@@ -1,6 +1,7 @@
 = simple_form_for([:admin,@project]) do |f|
   = f.association :category
   = f.input :name
+  = f.input :video_url, :hint => "Please input a valid url beginning with http://. It really doesn't matter what video site it is hosted at, though (Vimeo, Youtube, etc.)"
   = f.input :description
   = f.button :submit
 

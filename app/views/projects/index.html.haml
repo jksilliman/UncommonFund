@@ -2,6 +2,12 @@
   %h1= @category.name
   %p= markdown(@category.description)
 
-%ul
-  - @projects.each do |project|
-    %li= link_to project.name, project
+  %ul.projects
+    = render @projects    
+- else
+  - @categories.each do |category|
+    %h2= category.name
+    %p= category.description
+    %ul.projects
+      = render @projects
+

@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_filter :authenticate_user!, :only => [:like, :unlike]
+  before_filter :authenticate_and_redirect!, :only => [:like, :unlike]
   before_filter :load_project, :except => [:index]
 
 
@@ -8,6 +8,7 @@ class ProjectsController < ApplicationController
       @category = Category.find(params[:category_id])
       @projects = Category.projects
     else
+      @categories = Category.all
       @projects = Project.all
     end
     respond_with(@projects)

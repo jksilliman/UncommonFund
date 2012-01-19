@@ -16,6 +16,10 @@ gem "therubyracer", :require => 'v8'
 gem 'bluecloth'
 gem 'high_voltage'
 
+gem 'embedly'
+# sudo apt-get install curl  
+# sudo apt-get install libcurl3 libcurl3-dev"
+
 
 # Gems used only for assets and not required
 # in production environments by default.
