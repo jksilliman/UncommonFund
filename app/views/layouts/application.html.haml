@@ -5,7 +5,7 @@
     = stylesheet_link_tag "application"
     = javascript_include_tag "application"
     = csrf_meta_tags
-  %body
+  %body{:id=> "#{controller_name}", :class =>"#{action_name}"}
     .page-header
       .user-panel
         - if current_user
