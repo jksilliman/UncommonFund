@@ -1,1 +1,140 @@
-Coming soon!
+:coffeescript
+  $ () ->
+    qnum = 0
+    $("ul.faq").each () ->
+      answer_section = $(this)
+      menu_section = $("<div>")
+      $(".faqmenu").append(menu_section)
+      title = answer_section.prev('h1').text()
+      menu_section.append("<h5>" + title + "</h5>")
+      menu_list = $('<ul>')
+      menu_section.append(menu_list)
+      
+      answer_section.children().each () ->
+        question_item = $(this)
+        qname = "question" + qnum
+        question_item.append("<a name='" + qname + "'></a>")
+        qnum++
+        menu_list.append("<li><a href='#" + qname + "'>" + question_item.find("h4").text() + "</a></li>")
+      
+
+%h1 Frequently Asked Questions      
+.faqmenu
+
+%h1 I'm Thinking About Applying:
+%ul.faq
+  %li
+    %h4 What's new this year?
+    %p 
+      The Uncommon Fund now has $75,000 to distribute, as opposed to $40,000 last year. This means we can fund more projects, on hopefully a larger scale.
+      Additionally, this year we have added the component of online student voting for the projects that advance to the second round based off the videos submitted.
+
+  %li
+    %h4 Can I apply for more than one project?
+    %p
+      Yes!
+
+  %li
+    %h4 Do I have to be university affiliated?
+    %p
+      At least someone on your team must in some way be affiliated to the university (be it undergrad, grad, etc)
+
+  %li
+    %h4 Can I work in a team? Can I work alone?
+    %p
+      Either is fine.
+
+  %li
+    %h4 Are graduate students allowed to apply?
+    %p
+      Yes! ALL UChicago students are encouraged to apply, regardless of degree level.
+
+  %li
+    %h4 How much money can I ask for?
+    %p
+      There is no specific limit of possible funding; however, keep in mind that last year we funded 25 projects, for a total of $40,000. This year, we hope to be able to fund more projects for a total of $75,000. As a rule, the more reasonable your request, the more likely we will be able to grant your funding in full.
+
+  %li
+    %h4 What other sources of funding are available for my organization?
+    %p 
+      There is plenty of funding for student-run organizations on campus! While the Uncommon Fund does its best to fund innovative and unique student ideas, first consider if there are other resources on campus for your student organization:
+      %ul    
+        %li RSO? Try the SFGC
+        %li Cultural Organization? Try OMSA
+        %li Charity Based Organization? Try the CSF
+        %li Graduate Organization? Try _______
+        %li BA Thesis, or other means of professional development? Check out CAPS, and their sources of funding
+
+  %li
+    %h4 How many projects were funded last year? What are examples of projects?
+    %p
+      25 in 2011! We've funded a wide range of projects; everything from the Jersey Shore conference, to the Zombie Readiness Task Force, to Puppies on the Quad during Finals.  Take a look at past projects 
+      = link_to "here", page_path("history")
+
+  %li
+    %h4 What's the difference between the first and second round?
+    %p
+      The first round evaluates the idea. Is it interesting? Is it innovative? “Is it good in theory?” The second round will judge the practical side of your proposal; “that's all good and well in theory, but how does it work in practice?”
+      Furthermore, the first round will be judged solely by the board. The second round will also be judged by the board, but there will be the added component of the online student voting. Student voting, while not an absolute decider of success in the second round, will add extra consideration for the project that gains the most positive feedback (as well as a prize!).
+
+  %li
+    %h4 What criteria is the “idea” of the first round judged on?
+    %p
+      We will evaluate the quality of idea, innovation, and overall “uncommonness”
+
+  %li
+    %h4 Does my project have to affect the entire UChicago community?
+    %p
+      Not necessarily. The project should reflect an uncommon idea; it can affect a few enthusiasts, or the entire student body. The Uncommon Fund serves to exemplify the diversity and creativity of the student body; it can address unfilled niches on campus, but this is by no means a requirement.
+
+%h1 Application Process:
+
+%ul.faq
+
+  %li
+    %h4 What are the application components?
+    %p A 60-second video, as well as two short-answer questions.
+
+  %li
+    %h4 Where do I outline the details of my project? (budget, timeline, etc.)
+    %p
+      These details are not required in the first round application; there will be a second application for them should you be chosen to move on.
+
+  %li
+    %h4 Is the video required?
+    %p
+      Yes, it is.
+
+  %li
+    %h4 What will the videos be used for?
+    %ul
+      %li To help the board select which projects get moved from the first round to the second round
+      %li The videos that advance to the second round will be put up on the Uncommon Fund's website, where your fellow classmates can upvote the ones they want to see implemented. 
+
+  %li
+    %h4 Do I have to appear in my video?
+    %p
+      No! We value creativity, but most importantly, we value the creativity of your idea. Whatever you can do in 60 seconds to get your message across is what we are looking for.
+
+  %li
+    %h4 Will it hurt me if my video isn't professional?
+    %p
+      No; the first round application is meant to solely judge the idea. The video is simply to make it easier to get your point across, and to make the initial selection process somewhat more interactive and personal. Whether you sit in front of your webcam or make a film worthy of an Oscar, we will only judge you based on the information you present. Just have fun with it!
+
+  %li
+    %h4 If I move on to the second round, do I have to put my video on the Uncommon Fund website for student voting?
+    %p
+      No, it is not required. However, don't forget that putting your video up for your classmates to see can help promote and publicize your project! If selected for the second round, you will have the opportunity to create a new video if you wish.
+
+%h1 What Else?
+
+%ul.faq
+  %li
+    %h4 Who can I contact with more questions?
+    %p 
+      Email the Uncommon Fund Board at 
+      %a(href="mailto:uncommonfund@gmail.com") uncommonfund@gmail.com
+
+  %li
+    %h4 When will I hear back about which projects will move on to the second round?
+    %p Projects that advance to the second round will be announced Monday, 2/6

@@ -1,0 +1,13 @@
+ul.faq {
+  h4 {
+    line-height: 20px;
+    margin-bottom: 5px;
+  }
+  > li {
+    &, li {
+      color: black;
+    }
+    margin-bottom: 20px;
+    list-style: none;
+  }
+}

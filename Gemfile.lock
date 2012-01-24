@@ -63,6 +63,9 @@ GEM
     bluecloth (2.2.0)
     builder (3.0.0)
     cancan (1.6.7)
+    coffee-filter (0.1.1)
+      coffee-script (>= 2.2.0)
+      haml (>= 3.0.18)
     coffee-rails (3.1.1)
       coffee-script (>= 2.2.0)
       railties (~> 3.1.0)
@@ -165,6 +168,7 @@ DEPENDENCIES
   annotate
   bluecloth
   cancan
+  coffee-filter
   coffee-rails (~> 3.1.0.rc)
   devise (~> 1.4.0)!
   devise_ldap_authenticatable!

@@ -15,6 +15,7 @@ gem 'responders'
 gem "therubyracer", :require => 'v8'
 gem 'bluecloth'
 gem 'high_voltage'
+gem 'coffee-filter'
 
 gem 'embedly'
 # sudo apt-get install curl  
