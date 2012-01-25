@@ -4,6 +4,7 @@
     %title= "#{title} | UChicago Uncommon Fund" 
     = stylesheet_link_tag "application"
     = javascript_include_tag "application"
+    = javascript_include_tag "http://sg.uchicago.edu/sg-header/sg-header.js"
     = csrf_meta_tags
   %body{:id=> "#{controller_name}", :class =>"#{action_name}"}
     .page-header
@@ -44,3 +45,4 @@
         .row
           .span12.columns
             = yield
+            = render 'layouts/fb_box'
