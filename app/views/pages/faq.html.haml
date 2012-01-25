@@ -13,7 +13,7 @@
       answer_section.children().each () ->
         question_item = $(this)
         qname = "question" + qnum
-        question_item.append("<a name='" + qname + "'></a>")
+        question_item.prepend("<a name='" + qname + "'></a>")
         qnum++
         menu_list.append("<li><a href='#" + qname + "'>" + question_item.find("h4").text() + "</a></li>")
       
