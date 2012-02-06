@@ -1,6 +1,6 @@
 class Admin::ProjectsController < Admin::BaseController
   def index
-    @projects = Project.all
+    @projects = Project.includes(:owner)
   end
 
   def new
@@ -9,7 +9,8 @@ class Admin::ProjectsController < Admin::BaseController
   end
 
   def create
-    @project = Project.create(params[:project])
+    @project = Project.new(params[:project], :as => :admin)
+    @project.save
     respond_with(@project, :location => admin_projects_path)
   end
 
@@ -18,7 +19,8 @@ class Admin::ProjectsController < Admin::BaseController
   end
 
   def update
-    @project.update_attributes(params[:project])
+    @project.assign_attributes(params[:project], :as => :admin)
+    @project.save
     respond_with(@project, :location => admin_projects_path)
   end
 

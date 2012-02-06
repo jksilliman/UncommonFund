@@ -6,11 +6,13 @@
   %thead
     %tr
       %th Name
+      %th Owner
       %th Actions
   %tbody
     - @projects.each do |project|
       %tr
         %td= project.name
+        %td= project.owner.name
         %td
           = link_to "Edit", edit_admin_project_path(project)
           = link_to "Delete", admin_project_path(project), :remote => true, :method => :delete, :confirm => "Are you sure you want to delete this project? All its votes will be lost!" 

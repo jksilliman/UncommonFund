@@ -1,5 +1,8 @@
 %h1= @project.name
 %p
+  - if current_user == @project.owner
+    = link_to "Edit Project Information", edit_project_path(@project)
+%p
   - num_votes = @project.votes.count
   = pluralize(num_votes, "person")
   = (num_votes == 1) ? "likes" : "like"

@@ -1,6 +1,14 @@
-= simple_form_for([:admin,@project]) do |f|
+- if admin
+  - path = [:admin, @project]
+- else
+  - path = @project
+
+= simple_form_for(path) do |f|
   = f.association :category
   = f.input :name
+  - if admin
+    = f.input :owner_name, :label => "Project Owner", :hint => "Enter a CNetID"
+  
   = f.input :video_url, :hint => "Please input a valid url beginning with http://. It really doesn't matter what video site it is hosted at, though (Vimeo, Youtube, etc.)"
   = f.input :description
   = f.button :submit

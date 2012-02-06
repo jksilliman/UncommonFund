@@ -1,7 +1,7 @@
 class ProjectsController < ApplicationController
   before_filter :authenticate_and_redirect!, :only => [:like, :unlike]
   before_filter :load_project, :except => [:index]
-
+  before_filter :authorize_owner!, :only => [:edit, :update]
 
   def index
     if params[:category_id]
@@ -15,6 +15,16 @@ class ProjectsController < ApplicationController
   end
 
   def show
+    respond_with(@project)
+  end
+
+  def edit
+    respond_with(@project)
+  end
+
+  def update
+    @project.assign_attributes(params[:project], :as => :owner)
+    @project.save
     respond_with(@project)
   end
 
@@ -33,6 +43,10 @@ class ProjectsController < ApplicationController
   private
   def load_project
     @project = Project.find(params[:id])
+  end
+
+  def authorize_owner!
+    redirect_to root_path unless current_user == @project.owner
   end
 
 end
