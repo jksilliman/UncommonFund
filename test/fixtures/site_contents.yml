@@ -3,7 +3,9 @@
 one:
   name: MyString
   text: MyText
+  description: MyText
 
 two:
   name: MyString
   text: MyText
+  description: MyText
