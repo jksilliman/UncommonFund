@@ -5,9 +5,9 @@
   %ul.projects
     = render @projects    
 - else
-  - @categories.each do |category|
+  - @categories.shuffle.each do |category|
     %h2= category.name
     %p= category.description
     %ul.projects
-      = render category.projects
+      = render category.projects.shuffle
 
