@@ -2,9 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.content {
-  margin-left: 40px;
+#pages .content , #projects .content {
+  margin-left: 40px; margin-right:40px;
 }
+
 
 .vote-box{
   padding:10px 15px; background: #eee; margin-bottom:10px;
