@@ -17,6 +17,8 @@ gem 'bluecloth'
 gem 'high_voltage'
 gem 'coffee-filter'
 
+gem 'newrelic_rpm'
+
 gem 'embedly'
 # sudo apt-get install curl  
 # sudo apt-get install libcurl3 libcurl3-dev"

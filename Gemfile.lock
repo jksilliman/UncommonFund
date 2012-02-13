@@ -101,6 +101,7 @@ GEM
     mime-types (1.17.2)
     multi_json (1.0.3)
     net-ldap (0.2.2)
+    newrelic_rpm (3.3.1)
     oauth (0.4.5)
     orm_adapter (0.0.5)
     polyglot (0.3.3)
@@ -177,6 +178,7 @@ DEPENDENCIES
   haml-rails
   high_voltage
   jquery-rails
+  newrelic_rpm
   rails (= 3.1.1)
   responders
   sass (= 3.1.1)
