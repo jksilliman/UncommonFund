@@ -9,7 +9,10 @@
 
 .vote-box{
   padding:10px 15px; background: #eee; margin-bottom:10px;
-  .vote-message{
+  border-radius:4px; overflow:auto;
+  -moz-border-radius:4px;
+  -webkit-border-radius:4px;
+  .vote-count{
     float:left;
   }
   .vote-button{
