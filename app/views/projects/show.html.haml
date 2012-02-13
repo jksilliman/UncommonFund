@@ -2,15 +2,17 @@
 %p
   - if current_user == @project.owner
     = link_to "Edit Project Information", edit_project_path(@project)
-%p
-  - num_votes = @project.votes.count
-  = pluralize(num_votes, "person")
-  = (num_votes == 1) ? "likes" : "like"
-  = @project.name
-- if current_user and (@project.votes.find_by_user_id(current_user.id))
-  = link_to "Unlike?", unlike_project_path(@project), :method => "post", :class => "btn"
-- else
-  = link_to "Like!", like_project_path(@project), :method => "post", :class => "btn large primary"
+.vote-box
+  .vote-count
+    - num_votes = @project.votes.count
+    = pluralize(num_votes, "person")
+    = (num_votes == 1) ? "likes" : "like"
+    = @project.name
+  .vote-button
+  - if current_user and (@project.votes.find_by_user_id(current_user.id))
+    = link_to "Unlike?", unlike_project_path(@project), :method => "post", :class => "btn"
+  - else
+    = link_to "Like!", like_project_path(@project), :method => "post", :class => "btn large primary"
 
 
 

@@ -2,6 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#pages .content {
-  margin-left: 50px;
+.content {
+  margin-left: 40px;
+}
+
+.vote-box{
+  padding:10px 15px; background: #eee; margin-bottom:10px;
+  .vote-message{
+    float:left;
+  }
+  .vote-button{
+    float:right;
+  }
 }
