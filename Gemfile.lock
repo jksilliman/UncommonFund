@@ -161,6 +161,7 @@ GEM
       multi_json (>= 1.0.2)
     warden (1.0.6)
       rack (>= 1.0)
+    yaml_db (0.2.2)
 
 PLATFORMS
   ruby
@@ -188,3 +189,4 @@ DEPENDENCIES
   therubyracer
   turn
   uglifier
+  yaml_db
