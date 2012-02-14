@@ -1,13 +1,15 @@
 - if @category
-  %h1= @category.name
-  %p= markdown(@category.description)
+  .category-label
+    %h1= @category.name
+    %p= markdown(@category.description)
 
   %ul.projects
     = render @projects    
 - else
   - @categories.shuffle.each do |category|
-    %h2= category.name
-    %p= category.description
+    .category-label
+      %h2= category.name
+      %p= category.description
     %ul.projects
       = render category.projects.shuffle
 
