@@ -18,6 +18,8 @@ gem 'high_voltage'
 gem 'coffee-filter'
 
 gem 'newrelic_rpm'
+gem 'yaml_db'
+
 
 gem 'embedly'
 # sudo apt-get install curl  
