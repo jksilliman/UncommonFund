@@ -8,7 +8,7 @@
     = pluralize(num_votes, "person")
     = (num_votes == 1) ? "likes" : "like"
     = @project.name
-  .vote-button
+  -#.vote-button
     - if current_user and (@project.votes.find_by_user_id(current_user.id))
       = link_to "Unlike?", unlike_project_path(@project), :method => "post", :class => "btn"
     - else

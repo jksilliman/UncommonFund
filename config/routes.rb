@@ -4,8 +4,8 @@ UncommonFund::Application.routes.draw do
 
   resources :projects, :only => [:index, :show, :edit, :update] do
     member do
-      post :like
-      post :unlike
+#      post :like
+#      post :unlike
     end
   end
 
