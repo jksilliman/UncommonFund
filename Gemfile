@@ -19,7 +19,7 @@ gem 'coffee-filter'
 
 gem 'newrelic_rpm'
 gem 'yaml_db'
-
+gem 'mysql2'
 gem 'embedly'
 # sudo apt-get install curl  
 # sudo apt-get install libcurl3 libcurl3-dev"
