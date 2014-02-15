@@ -15,7 +15,7 @@ set :deploy_via, :remote_cache
 set :deploy_to, "/var/www/uncommonfund"
 
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
-server "sg.uchicago.edu", :app, :web, :db, :primary => true
+server "chicago-sg.uchicago.edu", :app, :web, :db, :primary => true
 set :user, "jksilliman"
 # if you're still using the script/reaper helper you will need
 # these http://github.com/rails/irs_process_scripts
