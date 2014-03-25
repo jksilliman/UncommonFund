@@ -1,12 +1,13 @@
 -title "Sign in"
 
-= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| 
-  = f.input :username
-  = f.input :password
+Signing in is temporarily disabled while we update our servers. We hope to enable it soon!
+/= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| 
+/  = f.input :username
+/  = f.input :password
 
   /- if devise_mapping.rememberable? 
   /  %div
   /    = f.input :remember_me, :as => :boolean
 
-  = f.submit "Sign in", :class => "btn primary"
+/  = f.submit "Sign in", :class => "btn primary"
 
